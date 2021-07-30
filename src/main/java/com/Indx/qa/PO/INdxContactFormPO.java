@@ -40,6 +40,10 @@ public class INdxContactFormPO extends  IndxBase{
         clickSafelyJS(submitbuttoncontactform);
     }
 
+    public void selectSubjectinContactForm(By locator,String s){
+        selectFromDropdownByvalue(locator,s);
+    }
+
 
 
 

@@ -63,18 +63,15 @@ public static WebDriverWait wait;
 
     JavascriptExecutor js = (JavascriptExecutor) driver;
 
-
+    public void clickSafelyJS(By locator){
+        js.executeScript("arguments[0].click();",getElement(locator));
+    }
 
     public void uploadImage(By locator,String s) {
 
         getElement(locator).sendKeys(s);
     }
 
-
-
-    public void clickSafelyJS(By locator){
-    js.executeScript("arguments[0].click();",getElement(locator));
-    }
 
 
     public  WebElement getElement(By locator){
@@ -94,7 +91,8 @@ public static WebDriverWait wait;
             return false;
         }
   }
-    public void selectSubjectinContactForm(By locator,String s){
+
+  public void selectFromDropdownByvalue(By locator,String s){
         Select sel = new Select(getElement(locator));
         sel.selectByValue(s);
     }
